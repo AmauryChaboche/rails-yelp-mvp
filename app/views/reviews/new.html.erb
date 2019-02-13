@@ -1,0 +1,13 @@
+
+
+
+
+
+<div class="container">
+  <h1> Make a review </h1>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: Review::GRADES, :prompt => "Choose a rating betwwen 0 and 5 "%>
+    <%= f.submit "Add a review", class: "btn btn-primary" %>
+  <% end %>
+</div>

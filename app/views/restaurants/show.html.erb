@@ -1,14 +1,33 @@
-<p> Here are all the info about the selected restaurant </p>
 
-<h1> <%= @restaurant.name %> </h1>
-<p> <%= @restaurant.address %> </p>
-<p> <%= @restaurant.phone_number %> </p>
-<p> <%= @restaurant.category %> </p>
-<br>
 
-<h2>List of reviews </h2>
-<% @restaurant.reviews.each do |review| %>
- <%= review.content %>
- <br>
- Rating : <strong> <%= review.rating %> </strong>
- <% end %>
+<div class="container">
+  <p class="text-center"> Here are all the info about the selected restaurant </p>
+
+  <h1> <%= @restaurant.name %> </h1>
+  <p> <%= @restaurant.address %> </p>
+  <p> <%= @restaurant.phone_number %> </p>
+  <p> <%= @restaurant.category %> </p>
+  <br>
+
+  <h2>List of reviews </h2>
+  <% @restaurant.reviews.each do |review| %>
+    <%= review.content %>
+    <br>
+    Rating : <strong> <%= review.rating %> </strong>
+    <br>
+    <br>
+    <% end %>
+    <br>
+
+    <button class="btn btn-success bouton">
+    <%=   link_to "Add a review", new_restaurant_review_path(@restaurant.id) %>
+   </button>
+
+  <br>
+  <br>
+
+   <button class="btn btn-danger bouton">
+    <%=   link_to "Go back", restaurants_path %>
+   </button>
+
+</div>
